@@ -8,7 +8,7 @@ import pages.loginPage;
 
 public class loginTest extends TestBase{
 	loginPage actn = new loginPage(driver);
-	@Test
+	@Test(dataProvider = "LoginData",priority=0)
 	public void validLogin(String email, String password) throws Exception {
 		actn.inputEmail(email);
 		actn.inputPassword(password);
