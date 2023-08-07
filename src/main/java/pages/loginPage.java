@@ -27,6 +27,7 @@ public class loginPage extends TestBase{
     
     
     public void inputEmail(String username) throws Exception {
+    	System.out.println(emailField);
     	driver.findElement(By.cssSelector(emailField)).click();
     	driver.findElement(By.cssSelector(emailField)).sendKeys(utils.fetchData(username));
     }

@@ -45,7 +45,7 @@ public class TestBase {
 			}
 			
 			try {
-				fis = new FileInputStream (projectlocation+"/src/main/resources/propertyFiles/locators.properties");
+				fis = new FileInputStream (projectlocation+"/src/main/resources/propertyFiles/OR.properties");
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
