@@ -12,15 +12,13 @@ public class loginPage extends TestBase{
 	
 	utility utils = new utility();
 	
-    String emailField = OR.getProperty("emailInputField_ID");
+    String emailField = OR.getProperty("emailField");
 
-    String passwordField = OR.getProperty("passwordField_ID");
+    String passwordField = OR.getProperty("passwordFld");
 
-    String loginBtn = OR.getProperty("loginBtn_XPATH");
+    String loginBtn = OR.getProperty("submitBtn");
     
-    String closeModalFrame = OR.getProperty("CloseModalFrame");
-    
-    String closeModal = OR.getProperty("closeModalBtn");
+    String clickSignup = OR.getProperty("signUpBtn");
     
     public loginPage(WebDriver driver) {
         TestBase.driver = driver;
@@ -29,13 +27,13 @@ public class loginPage extends TestBase{
     
     
     public void inputEmail(String username) throws Exception {
-    	driver.findElement(By.id(emailField)).click();
-    	driver.findElement(By.id(emailField)).sendKeys(utils.fetchData(username));
+    	driver.findElement(By.cssSelector(emailField)).click();
+    	driver.findElement(By.cssSelector(emailField)).sendKeys(utils.fetchData(username));
     }
     
     public void inputPassword(String password) throws Exception {
-    	driver.findElement(By.id(passwordField)).click();
-    	driver.findElement(By.id(passwordField)).sendKeys(utils.fetchData(password));
+    	driver.findElement(By.cssSelector(passwordField)).click();
+    	driver.findElement(By.cssSelector(passwordField)).sendKeys(utils.fetchData(password));
     }
     
     public void clickLogin() throws InterruptedException {
@@ -44,17 +42,16 @@ public class loginPage extends TestBase{
     }
     
     public void clearEmailField() {
-    	driver.findElement(By.id(emailField)).clear();
+    	driver.findElement(By.cssSelector(emailField)).clear();
     }
     
     public void clearPswdField() {
-    	driver.findElement(By.id(passwordField)).clear();
+    	driver.findElement(By.cssSelector(passwordField)).clear();
     }
     
-    public void closeModal() {
+    public void NaviatetoSignUp() {
     	//driver.switchTo().frame(4);
-    	driver.findElement(By.xpath(closeModalFrame)).click();
-    	driver.findElement(By.xpath(closeModal)).click();
+    	driver.findElement(By.xpath(clickSignup)).click();
     }
 
 }
